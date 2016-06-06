@@ -1,10 +1,10 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 # Uncomment the database that you have configured in config/database.yml
 # ----------------------------------------------------------------------
-# gem 'mysql2'
+gem 'mysql2'
 # gem 'sqlite3'
-gem 'pg'
+# gem 'pg'
 
 # Removes a gem dependency
 def remove(name)
