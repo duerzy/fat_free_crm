@@ -1,2 +1,2 @@
-FROM rails:onbuild
+FROM myrails:onbuild
 
