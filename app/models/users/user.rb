@@ -92,14 +92,18 @@ class User < ActiveRecord::Base
   validates_presence_of :email, message: :missing_email
 
   #----------------------------------------------------------------------------
-  def name
-    first_name.blank? ? username : first_name
-  end
+  # for chinese habit, name is last name  and  first name.use alias_method
+ # def name
+ #   first_name.blank? ? username : first_name
+ # end
 
   #----------------------------------------------------------------------------
   def full_name
-    first_name.blank? && last_name.blank? ? email : "#{first_name} #{last_name}".strip
+    #   I didn't find the way to set format, so do the hard edit.
+    first_name.blank? && last_name.blank? ? email : "#{last_name} #{first_name}".strip
   end
+
+  alias_method :name, :full_name
 
   #----------------------------------------------------------------------------
   def suspended?

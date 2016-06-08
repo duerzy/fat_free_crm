@@ -163,11 +163,12 @@ class Lead < ActiveRecord::Base
 
   #----------------------------------------------------------------------------
   def full_name(format = nil)
-    if format.nil? || format == "before"
-      "#{first_name} #{last_name}"
-    else
+    #   I didn't find the way to set format, so do the hard edit.
+ #   if format.nil? || format == "before"
+ #     "#{first_name} #{last_name}"
+    #else
       "#{last_name}, #{first_name}"
-    end
+    #end
   end
   alias_method :name, :full_name
 
